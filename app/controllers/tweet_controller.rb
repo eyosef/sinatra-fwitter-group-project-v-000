@@ -15,8 +15,7 @@ class TweetController < ApplicationController
   post '/tweets/new' do
     @user = User.find_by(session["user_id"])
     content = params["content"]
-    binding.pry
-     content.chars.any? { |char| ('a'..'z').include? char.downcase}
+
     if content.chars.any? { |char| ('a'..'z').include? char.downcase}
       @tweet = Tweet.new
       @tweet.content = params["content"]
