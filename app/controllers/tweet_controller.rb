@@ -20,7 +20,7 @@ class TweetController < ApplicationController
       @tweet.content = params["content"]
       @tweet.user_id = @user.id
       @tweet.save
-      erb :'tweets/show_tweet' #UPDATE
+      erb :'tweets/show_tweet'
     else
       redirect to "tweets/new"
     end
