@@ -17,7 +17,7 @@ class TweetController < ApplicationController
     content = params["content"]
     binding.pry
      content.chars.any? { |char| ('a'..'z').include? char.downcase}
-    if params["content"] != "" || params["content"] != " "
+    if content.chars.any? { |char| ('a'..'z').include? char.downcase}
       @tweet = Tweet.new
       @tweet.content = params["content"]
       @tweet.user_id = @user.id
