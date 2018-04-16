@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
 
   helpers do #block allows you to create helper methods
     def logged_in
-      session.include?("user_id")
+      !!current_user
     end
 
     def current_user
