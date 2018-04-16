@@ -14,6 +14,8 @@ class TweetController < ApplicationController
 
   post '/tweets/new' do
     @user = User.find_by(session["user_id"])
+    content = params["content"]
+    binding.pry
 
     if params["content"] != "" || params["content"] != " "
       @tweet = Tweet.new
