@@ -15,7 +15,7 @@ class TweetController < ApplicationController
   post '/tweets/new' do
     @user = User.find_by(session["user_id"])
 
-    if params["content"] != ""
+    if params["content"] != "" || params["content"] != " "
       @tweet = Tweet.new
       @tweet.content = params["content"]
       @tweet.user_id = @user.id
